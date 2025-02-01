@@ -1,3 +1,15 @@
+/* Winning animation modification */
+@keyframes celebrateWin {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.winning-cell {
+    animation: celebrateWin 1s ease-in-out infinite;
+    background-color: #f1c40f; /* Golden yellow */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -118,17 +130,6 @@ h1 {
     animation: pop 0.3s ease;
 }
 
-@keyframes win {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.winning-cell {
-    animation: win 0.5s infinite;
-    background-color: #f1c40f;
-}
-
 @keyframes confetti {
     0% { transform: translateY(0) rotate(0); opacity: 1; }
     100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
@@ -142,36 +143,27 @@ h1 {
     animation: confetti 2s ease-out;
 }
 
-footer {
+/* Instagram Footer at Top Left */
+.header-text {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
-    right: 10px;
-    text-align: left;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #333;
+    font-weight: normal;
+    z-index: 100;
 }
 
-footer .made-by {
-    margin-bottom: 5px;
-}
-
-footer .made-by strong {
-    color: #3498db;
-}
-
-footer .instagram-link a {
-    color: #e4405f;
+.header-text a {
+    color: #e4405f; /* Instagram's color */
     text-decoration: none;
-    font-weight: bold;
 }
 
-footer .instagram-link a:hover {
+.header-text a:hover {
     text-decoration: underline;
 }
 
-footer .instruction {
-    font-size: 0.8em;
+.header-text span {
+    font-size: 1em;
     color: #666;
-    margin-top: 3px;
 }

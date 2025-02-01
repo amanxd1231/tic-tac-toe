@@ -32,7 +32,7 @@ startGameButton.addEventListener('click', () => {
 });
 
 function handleCellClick(event) {
-    if (!gameActive) return;
+    if (!gameActive || currentPlayer === 'O') return; // Prevent clicks when AI's turn
 
     const clickedCell = event.target;
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
